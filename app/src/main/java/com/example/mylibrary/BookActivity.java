@@ -2,6 +2,7 @@ package com.example.mylibrary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 public class BookActivity extends AppCompatActivity {
+    public static final String BOOK_ID_KEY = "bookId";
 
     private ImageView imgBookImage;
     private TextView txtBookName, txtBookAuthor, txtBookPages, txtShortDiscription, txtLongDiscription;
@@ -20,9 +22,19 @@ public class BookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_book);
 
         initViews();
-        Book book = new Book(2,"Your name","Makoto Shinkai",1200,"https://static-01.daraz.com.bd/p/6bad19f2df7a55d366b5a342fea31c43.jpg","Romance","Awesome");
 
-        setData(book);
+        Intent intent = getIntent();
+        if (null != intent)
+        {
+            int bookId = intent.getIntExtra(BOOK_ID_KEY,-1);
+            if(bookId != -1)
+            {
+                Book incomingBook = Utils.getInstance().getBookById(bookId);
+                if (null != incomingBook){
+                    setData(incomingBook);
+                }
+            }
+        }
 
     }
 
