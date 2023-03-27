@@ -3,6 +3,7 @@ package com.example.mylibrary;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -61,7 +62,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle(getString(R.string.app_name));
+                builder.setMessage("This is a practice app when study Android Studio, check my website \n"+
+                        "Developed with love by Son Dang");
+                builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
 
+                    }
+                });
+                builder.setPositiveButton("Visit", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(MainActivity.this, WebsiteActivity.class);
+                        intent.putExtra("url","https://www.google.com/");
+                        startActivity(intent);
+                    }
+                });
+                builder.create().show();
+
+            }
+        });
     }
 
     private void initViews()
