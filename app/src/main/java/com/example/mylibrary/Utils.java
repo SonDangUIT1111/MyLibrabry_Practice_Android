@@ -37,8 +37,8 @@ public class Utils {
     }
 
     private void initData(){
-        allBooks.add(new Book(1,"Suzume no tojimari","Makoto Shinkai",1200,"https://upload.wikimedia.org/wikipedia/vi/thumb/5/51/Suzume_no_Tojimari.tiff/lossy-page1-640px-Suzume_no_Tojimari.tiff.jpg","Romance","Awesome"));
-        allBooks.add(new Book(2,"Your name","Makoto Shinkai",1200,"https://static-01.daraz.com.bd/p/6bad19f2df7a55d366b5a342fea31c43.jpg","Romance","Awesome"));
+        allBooks.add(new Book(1,"Suzume no tojimari","Makoto Shinkai",1200,"https://upload.wikimedia.org/wikipedia/vi/thumb/5/51/Suzume_no_Tojimari.tiff/lossy-page1-640px-Suzume_no_Tojimari.tiff.jpg","Romance and action","Awesome and motion"));
+        allBooks.add(new Book(2,"Your name","Makoto Shinkai",1500,"https://static-01.daraz.com.bd/p/6bad19f2df7a55d366b5a342fea31c43.jpg","Romance","Awesome"));
     }
 
     public static Utils getInstance() {

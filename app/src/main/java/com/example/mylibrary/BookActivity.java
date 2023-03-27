@@ -141,15 +141,15 @@ public class BookActivity extends AppCompatActivity {
     {
         ArrayList<Book> alreadyReadBooks = Utils.getInstance().getAlreadyReadBooks();
 
-        boolean existInAlradyReadBooks = false;
+        boolean existInAlreadyReadBooks = false;
 
         for (Book b: alreadyReadBooks){
             if (b.getId() == book.getId()){
-                existInAlradyReadBooks = true;
+                existInAlreadyReadBooks = true;
             }
         }
 
-        if (existInAlradyReadBooks) {
+        if (existInAlreadyReadBooks) {
             btnAddToAlreadyRead.setEnabled(false);
         }
         else {
@@ -187,6 +187,7 @@ public class BookActivity extends AppCompatActivity {
         txtBookAuthor = findViewById(R.id.txtBookAuthor);
         txtBookPages = findViewById(R.id.txtBookPages);
         txtShortDiscription = findViewById(R.id.txtShortDescription);
+        txtLongDiscription = findViewById(R.id.txtLongDescription);
 
         btnAddToWantToRead = findViewById(R.id.btnAddToWantToRead);
         btnAddToAlreadyRead = findViewById(R.id.btnAddToAlreadyRead);
