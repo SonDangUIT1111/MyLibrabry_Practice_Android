@@ -17,6 +17,16 @@ public class MainActivity extends AppCompatActivity {
 
         initViews();
 
+        Utils.getInstance();
+
+        btnAlreadyRead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AlreadyReadBookActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btnAllBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

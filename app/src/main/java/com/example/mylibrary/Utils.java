@@ -7,6 +7,7 @@ public class Utils {
     private static Utils instance;
 
     private static ArrayList<Book> allBooks;
+    private static ArrayList<Book> currentlyReadBooks;
     private static ArrayList<Book> alreadyReadBooks;
     private static ArrayList<Book> wantToReadBooks;
     private static ArrayList<Book> favouriteBooks;
@@ -28,6 +29,10 @@ public class Utils {
         if (null == favouriteBooks)
         {
             favouriteBooks = new ArrayList<>();
+        }
+        if (null == currentlyReadBooks)
+        {
+            currentlyReadBooks = new ArrayList<>();
         }
     }
 
@@ -63,6 +68,11 @@ public class Utils {
         return favouriteBooks;
     }
 
+    public static ArrayList<Book> getCurrentlyReadBooks() {
+        return currentlyReadBooks;
+    }
+
+
     public Book getBookById(int id)
     {
         for (Book b: allBooks)
@@ -73,5 +83,18 @@ public class Utils {
             }
         }
         return null;
+    }
+
+    public boolean addToAlreadyRead(Book book){
+        return alreadyReadBooks.add(book);
+    }
+    public boolean addToWantToRead(Book book){
+        return wantToReadBooks.add(book);
+    }
+    public boolean addToCurrentlyRead(Book book){
+        return currentlyReadBooks.add(book);
+    }
+    public boolean addToFavouriteRead(Book book){
+        return favouriteBooks.add(book);
     }
 }
